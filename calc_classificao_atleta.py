@@ -52,13 +52,13 @@ def calc_desconto(idade):
 def calc_valor_final(idade):
     taxa = calc_taxa()
     desconto = calc_desconto(idade)
-
-    return (taxa * (desconto / 100))
-
+    if (desconto != 0 ): return (taxa - (taxa * (desconto / 100))) 
+    else: return taxa
+     
 
 classificacao = classificar_atleta(idade)
 taxa = calc_taxa()
 desconto = calc_desconto(idade)
 valor_final = calc_valor_final(idade)
 
-print(f"Altleta: {nome} \nCategoria: {classificacao} \nTaxa original: {taxa} \nDeconto aplicado: {desconto}%  \nValor Final: R${valor_final}")
+print(f"Altleta: {nome} \nCategoria: {classificacao} \nTaxa original: R${taxa} \nDeconto aplicado: {desconto}%  \nValor Final: R${valor_final}")
